@@ -40,7 +40,7 @@ class BooksController < ApplicationController
      
     def create
             params.require(:book)
-            permitted = params[:book].permit(:title,:genre,:publish_date,:ISBNnum)
+            permitted = params[:book].permit(:title,:author,:genre,:publish_date,:ISBNnum)
             @book = Book.create!(permitted)
         if @book.save
             flash[:notice] = "#{@book.title} was successfully created."
@@ -57,7 +57,7 @@ class BooksController < ApplicationController
     def update
        @book = Book.find params[:id]
        params.require(:book)
-       permitted = params[:book].permit(:title,:genre,:publish_date,:description, :ISBNnum)
+       permitted = params[:book].permit(:title,:author,:genre,:publish_date,:description, :ISBNnum)
        if @book.update_attributes!(permitted)
        flash[:notice] = "#{@book.title} was successfully updated."
        redirect_to book_path(@book)
