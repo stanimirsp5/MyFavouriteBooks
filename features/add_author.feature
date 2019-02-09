@@ -7,7 +7,7 @@ Feature: search for books by author
 Background: books in database
  
 Scenario: add author to existing book
-  When I go to the edit page for "To Kill a Mockingbird"
-  And  I fill in "Author" with "Harper Lee"
+  When I go to the edit page for "Harry Potter"
+  And  I fill in "Author" with "J.K.Rowling"
   And  I press "Update Book Info"
-  Then the author of "To Kill a Mockingbird" should be "Harper Lee"
+  Then the author of "Harry Potter" should be "J.K.Rowling"

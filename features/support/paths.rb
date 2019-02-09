@@ -20,7 +20,7 @@ module NavigationHelpers
     '/books'  
     
      when /^the edit page for/
-    '/books/1/edit' 
+    '/books' 
       
     when /^the Create New Book page/
       '/books/new'
